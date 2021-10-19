@@ -1,0 +1,146 @@
+{
+  "menus": {
+    "en-US": {
+      "*": [
+        {
+          "path": "/en-US",
+          "title": "Uni API",
+          "meta": {}
+        }
+      ],
+      "/en-US/packages": [
+        {
+          "title": "Introduction",
+          "path": "/en-US/packages/quick-start",
+          "meta": {
+            "order": 0
+          },
+          "children": [
+            {
+              "path": "/en-US/packages/quick-start/plugin",
+              "title": "Introduce by environment",
+              "meta": {}
+            }
+          ]
+        },
+        {
+          "title": "Introduction",
+          "meta": {
+            "order": 0,
+            "__fallback": true
+          },
+          "children": [
+            {
+              "path": "/en-US/packages/quick-start",
+              "title": "QuickStart",
+              "meta": {}
+            }
+          ]
+        },
+        {
+          "title": "Base",
+          "path": "/en-US/packages/base",
+          "meta": {},
+          "children": [
+            {
+              "path": "/en-US/packages/base/env",
+              "title": "env",
+              "meta": {}
+            }
+          ]
+        }
+      ]
+    },
+    "zh-CN": {
+      "*": [
+        {
+          "path": "/",
+          "title": "Uni API",
+          "meta": {}
+        }
+      ],
+      "/packages": [
+        {
+          "title": "介绍",
+          "path": "/packages/quick-start",
+          "meta": {
+            "order": 0
+          },
+          "children": [
+            {
+              "path": "/packages/quick-start/plugin",
+              "title": "分端构建",
+              "meta": {}
+            }
+          ]
+        },
+        {
+          "title": "介绍",
+          "meta": {
+            "order": 0,
+            "__fallback": true
+          },
+          "children": [
+            {
+              "path": "/packages/quick-start",
+              "title": "快速开始",
+              "meta": {}
+            }
+          ]
+        },
+        {
+          "title": "环境探针 - 基础功能",
+          "path": "/packages/base",
+          "meta": {},
+          "children": [
+            {
+              "path": "/packages/base/env",
+              "title": "env",
+              "meta": {}
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "locales": [
+    {
+      "name": "zh-CN",
+      "label": "中文"
+    },
+    {
+      "name": "en-US",
+      "label": "English"
+    }
+  ],
+  "navs": {
+    "en-US": [
+      {
+        "title": "API",
+        "path": "/en-US/packages"
+      },
+      {
+        "title": "GitHub",
+        "path": "https://github.com/raxjs/universal-api"
+      }
+    ],
+    "zh-CN": [
+      {
+        "title": "API",
+        "path": "/packages"
+      },
+      {
+        "title": "GitHub",
+        "path": "https://github.com/raxjs/universal-api"
+      }
+    ]
+  },
+  "title": "Uni SDK",
+  "logo": "https://img.alicdn.com/imgextra/i3/O1CN01lt5FH71VubB3j3Okd_!!6000000002713-2-tps-412-412.png",
+  "mode": "site",
+  "repository": {
+    "url": "https://github.com/mr-kings/uni-sdk",
+    "branch": "master"
+  },
+  "theme": {}
+}

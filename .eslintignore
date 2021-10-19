@@ -1,0 +1,7 @@
+# 忽略eslint校验
+/test
+/types
+/dist/
+/node_modules
+/coverage
+/.husky
