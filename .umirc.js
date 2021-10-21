@@ -5,10 +5,7 @@ export default {
   title: 'Uni SDK',
   logo: 'https://img.alicdn.com/imgextra/i3/O1CN01lt5FH71VubB3j3Okd_!!6000000002713-2-tps-412-412.png',
   favicon: 'https://img.alicdn.com/imgextra/i3/O1CN01lt5FH71VubB3j3Okd_!!6000000002713-2-tps-412-412.png',
-  locales: [
-    ['zh-CN', '中文'],
-    ['en-US', 'English']
-  ],
+  locales: [['zh-CN', '中文']],
   mode: 'site',
   resolve: {
     includes: ['./docs']
@@ -18,16 +15,6 @@ export default {
       {
         title: 'API',
         path: '/packages'
-      },
-      {
-        title: 'GitHub',
-        path: 'https://github.com/mr-kings/uni-sdk'
-      }
-    ],
-    'en-US': [
-      {
-        title: 'API',
-        path: '/en-US/packages'
       },
       {
         title: 'GitHub',

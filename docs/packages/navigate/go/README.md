@@ -3,7 +3,7 @@ group:
   title: 路由
 ---
 
-# navigate.replace
+# navigate.go
 
 [![npm](https://img.shields.io/npm/v/@uni/navigate.svg)](https://www.npmjs.com/package/@uni/navigate)
 
@@ -31,8 +31,8 @@ import navigate from '@uni/navigate'
 // import chooseImage from '@uni/navigate/lib/quickapp;
 
 navigate
-  .replace({
-    url: 'https://www.taobao.com/'
+  .go({
+    step: -1
   })
   .then(() => {})
 ```
@@ -45,35 +45,13 @@ import { navigate } from '@uni/apis'
 
 ## 参数
 
-| 成员             | 类型        | 描述       | 必选 | 默认值 |
-| ---------------- | ----------- | ---------- | :--: | :----: |
-| options          | `object`    | go 参数    |  是  |   -    |
-| options.url      | `string`    | 页面 URL.  |  是  |   -    |
-| options.success  | `Function`  | 成功的回调 |  否  |   -    |
-| options.fail     | `Function`  | 失败的回调 |  否  |   -    |
-| options.complete | `Function`  | 结束的回调 |  否  |   -    |
-
-## web 中使用
-
-当在 h5 中使用时，会区分 hash 路由和普通路由，以及是否需要刷新
-所以这里提供了两个参数：isHash 和 refresh，他们只在 web 环境下支持
-
-| 成员    | 类型      | 描述                                              | 必选 | 默认值 |
-| ------- | --------- | ------------------------------------------------- | :--: | :----: |
-| isHash  | `boolean` | 是否是 hash 路由，如果 true，则 url 前会自动加上# |  否  | false  |
-| refresh | `boolean` | 是否需要刷新.                                     |  否  |  true  |
-
-```javascript
-import navigate from '@uni/navigate'
-
-navigate
-  .replace({
-    isHash: true,
-    refresh: true,
-    url: '/pages/toast/index'
-  })
-  .then(() => {})
-```
+| 成员             | 类型        | 描述                                                                                 | 必选 | 默认值 |
+| ---------------- | ----------- | ------------------------------------------------------------------------------------ | ---- | ------ |
+| options          | `object`    | go 参数                                                                              | 是   | -      |
+| options.step     | `number`    | 前进步数为正值且仅支持 web，后退步数为负值，若大于现有打开的页面数，则返回到起始页。 | 是   | -      |
+| options.success  | `Function`  | 成功的回调                                                                           | 否   | -      |
+| options.fail     | `Function`  | 失败的回调                                                                           | 否   | -      |
+| options.complete | `Function`  | 结束的回调                                                                           | 否   | -      |
 
 </div>
 <div>
@@ -103,3 +81,25 @@ export default () => (
 </div>
 </div>
 </div>
+
+
+```jsx | inline
+  import React from 'react';
+  export default class Home extends React.Component {
+    componentDidMount() {
+      document.querySelector('.__dumi-default-menu').style.background = '#fff';
+      if (location.search.split(/[?&]/).some(i => i === 'clear=1')) {
+        document.querySelector('.__dumi-default-navbar').style.display = 'none';
+        document.querySelector('.__dumi-default-layout').classList = [];
+        document.querySelector('.__dumi-default-menu').style.display = 'none';
+        document.querySelector('.__dumi-default-layout-toc').style.display = 'none';
+        document.querySelector('.__dumi-default-layout-content').querySelector('.markdown').querySelector('h1').style.marginTop = 0;
+        parent.postMessage && parent.postMessage(parent.postMessage({ event: 'syncIframeHeight', height: document.querySelector('.__dumi-default-layout-content').offsetHeight }, '*'));
+      }
+    }
+
+    render() {
+      return null;
+    }
+  }
+```

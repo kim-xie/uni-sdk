@@ -4,5 +4,5 @@ export const CONTAINER_NAME = {
   BYTE: 'bytedanceMiniProgram',
   WEB: 'web',
   BAIDU: 'baiduMiniProgram',
-  KWAI: 'kuaishouMiniProgram',
-};
+  KWAI: 'kuaishouMiniProgram'
+}

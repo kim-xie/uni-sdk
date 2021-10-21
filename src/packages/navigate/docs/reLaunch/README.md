@@ -17,57 +17,62 @@ group:
 <img alt="browser" src="https://gw.alicdn.com/tfs/TB1uYFobGSs3KVjSZPiXXcsiVXa-200-200.svg" width="25px" height="25px" /> <img alt="miniApp" src="https://gw.alicdn.com/tfs/TB1bBpmbRCw3KVjSZFuXXcAOpXa-200-200.svg" width="25px" height="25px" title="ali miniprogram" /> <img alt="wechatMiniprogram" src="https://img.alicdn.com/tfs/TB1slcYdxv1gK0jSZFFXXb0sXXa-200-200.svg" width="25px" height="25px" title="wechatMiniprogram" /> <img alt="bytedanceMicroApp" src="https://gw.alicdn.com/tfs/TB1jFtVzO_1gK0jSZFqXXcpaXXa-200-200.svg" width="25px" height="25px" title="bytedanceMicroApp" /> <img alt="baiduSmartProgram" src="https://img.alicdn.com/imgextra/i4/O1CN01jngdBb24yGv2Fu34G_!!6000000007459-2-tps-200-200.png" width="25px" height="25px" title="百度小程序" /> <img alt="kuaiShouMiniProgram" src="https://gw.alicdn.com/imgextra/i4/O1CN01kzmJMM24jcFEzp5Wv_!!6000000007427-2-tps-200-200.png" width="25px" height="25px" title="快手小程序" />
 
 ## Install
+
 ```bash
 $ npm install @uni/navigate --save
 ```
 
 ## Usage
+
 ```javascript
-import navigate from '@uni/navigate';
+import navigate from '@uni/navigate'
 
 // 快应用中的引入方法
 // import chooseImage from '@uni/navigate/lib/quickapp;
 
-navigate.reLaunch({
-  url: 'https://www.taobao.com/'
-}).then(() => {
-});
-
+navigate
+  .reLaunch({
+    url: 'https://www.taobao.com/'
+  })
+  .then(() => {})
 ```
 
 你也可以从大包引入：
+
 ```javascript
-import { navigate } from '@uni/apis';
+import { navigate } from '@uni/apis'
 ```
 
 ## 参数
-| 成员             | 类型      | 描述    | 必选  | 默认值 |
-| ---------------- | --------- | ------ | :---: | :----: |
-| options          | `object`  | go 参数    |  是   |   -    |
-| options.url      | `string`  | 页面 URL.  |  是   |   -    |
-| options.success | `Function`  | 成功的回调 | 否 | - |
-| options.fail | `Function`  | 失败的回调 | 否 | - |
-| options.complete | `Function`  | 结束的回调 | 否 | - |
 
-## web中使用
-当在h5中使用时，会区分hash路由和普通路由，以及是否需要刷新
-所以这里提供了两个参数：isHash 和 refresh，他们只在web环境下支持
+| 成员             | 类型        | 描述       | 必选 | 默认值 |
+| ---------------- | ----------- | ---------- | :--: | :----: |
+| options          | `object`    | go 参数    |  是  |   -    |
+| options.url      | `string`    | 页面 URL.  |  是  |   -    |
+| options.success  | `Function`  | 成功的回调 |  否  |   -    |
+| options.fail     | `Function`  | 失败的回调 |  否  |   -    |
+| options.complete | `Function`  | 结束的回调 |  否  |   -    |
 
-| 成员             | 类型      | 描述   | 必选  | 默认值 |
-| ---------------- | --------- | ----- | :---: | :----: |
-| isHash          | `boolean`  | 是否是hash路由，如果 true，则url前会自动加上# |  否   |   false    |
-| refresh      | `boolean`  | 是否需要刷新. |  否   |   true   |
+## web 中使用
+
+当在 h5 中使用时，会区分 hash 路由和普通路由，以及是否需要刷新
+所以这里提供了两个参数：isHash 和 refresh，他们只在 web 环境下支持
+
+| 成员    | 类型      | 描述                                              | 必选 | 默认值 |
+| ------- | --------- | ------------------------------------------------- | :--: | :----: |
+| isHash  | `boolean` | 是否是 hash 路由，如果 true，则 url 前会自动加上# |  否  | false  |
+| refresh | `boolean` | 是否需要刷新.                                     |  否  |  true  |
 
 ```javascript
-import navigate from '@uni/navigate';
+import navigate from '@uni/navigate'
 
-navigate.reLaunch({
-  isHash: true,
-  refresh: true,
-  url: '/pages/toast/index'
-}).then(() => {
-});
-
+navigate
+  .reLaunch({
+    isHash: true,
+    refresh: true,
+    url: '/pages/toast/index'
+  })
+  .then(() => {})
 ```
 
 </div>
@@ -77,15 +82,19 @@ navigate.reLaunch({
 /**
  * iframe: true
  */
-import React from 'react';
+import React from 'react'
 export default () => (
-  <iframe style={{
+  <iframe
+    style={{
       boxShadow: '0 2px 15px rgba(0,0,0,0.1)',
       width: '375px',
       height: '700px'
-    }} src='https://herbox-embed.alipay.com/p/uni/uni?previewZoom=100&view=preview&defaultPage=pages/navigate/index&topSlider=false'></iframe>
-);
+    }}
+    src="https://herbox-embed.alipay.com/p/uni/uni?previewZoom=100&view=preview&defaultPage=pages/navigate/index&topSlider=false"
+  ></iframe>
+)
 ```
+
 <div style="display: flex;margin-top: 50px;">
   <div>
     <img src="https://img.alicdn.com/imgextra/i1/O1CN01Ky8HXS23ytpewgaAV_!!6000000007325-0-tps-688-630.jpg" width="220" height="200" />

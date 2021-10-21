@@ -52,74 +52,12 @@ export function getRoutes() {
     "wrappers": [require('D:/codes/uni-sdk/node_modules/@umijs/preset-dumi/lib/theme/layout').default, require('D:/codes/uni-sdk/node_modules/dumi-theme-default/es/layout.js').default],
     "routes": [
       {
-        "path": "/en-US",
-        "component": require('D:/codes/uni-sdk/docs/README.en-US.md').default,
-        "exact": true,
-        "meta": {
-          "filePath": "docs/README.en-US.md",
-          "updatedTime": 1633957682761,
-          "hero": {
-            "image": "https://img.alicdn.com/imgextra/i3/O1CN01lt5FH71VubB3j3Okd_!!6000000002713-2-tps-412-412.png",
-            "title": "Uni API",
-            "desc": "<div class=\"markdown\"><p>Focus on the cross-end API library on the applet side and the web side</p></div>",
-            "actions": [
-              {
-                "text": "Getting Started",
-                "link": "/packages"
-              }
-            ]
-          },
-          "features": [
-            {
-              "icon": "https://gw.alipayobjects.com/zos/bmw-prod/b3e102cd-5dad-4046-a02a-be33241d1cc7/kj9t8oji_w144_h144.png",
-              "title": "quickly develop multiple applications.",
-              "desc": "<div class=\"markdown\"><p>support<code>h5、miniprogram</code>applications</p></div>"
-            },
-            {
-              "icon": "https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png",
-              "title": "quick access",
-              "desc": "<div class=\"markdown\"><p>easy access</p></div>"
-            },
-            {
-              "icon": "https://gw.alipayobjects.com/zos/bmw-prod/f093e060-726e-471c-a53e-e988ed3f560c/kj9t9sk7_w144_h144.png",
-              "title": "API",
-              "desc": "<div class=\"markdown\"><p>provide rich <code>API</code></p></div>"
-            },
-            {
-              "icon": "https://gw.alipayobjects.com/zos/bmw-prod/3863e74a-7870-4874-b1e1-00a8cdf47684/kj9t7ww3_w144_h144.png",
-              "title": "docs",
-              "desc": "<div class=\"markdown\"><p>perfect docs support</p></div>"
-            },
-            {
-              "icon": "https://gw.alipayobjects.com/zos/bmw-prod/d60657df-0822-4631-9d7c-e7a869c2f21c/k79dmz3q_w126_h126.png",
-              "title": "unpacking by environment",
-              "desc": "<div class=\"markdown\"><p>Extreme code size, experience upgrade</p></div>"
-            }
-          ],
-          "slugs": [
-            {
-              "depth": 1,
-              "value": "Uni API",
-              "heading": "uni-api"
-            },
-            {
-              "depth": 1,
-              "value": "Example",
-              "heading": "example"
-            }
-          ],
-          "title": "Uni API",
-          "locale": "en-US"
-        },
-        "title": "Uni API"
-      },
-      {
         "path": "/",
         "component": require('D:/codes/uni-sdk/docs/README.md').default,
         "exact": true,
         "meta": {
           "filePath": "docs/README.md",
-          "updatedTime": 1633957682761,
+          "updatedTime": 1634661490000,
           "hero": {
             "image": "https://img.alicdn.com/imgextra/i3/O1CN01lt5FH71VubB3j3Okd_!!6000000002713-2-tps-412-412.png",
             "title": "Uni API",
@@ -175,96 +113,65 @@ export function getRoutes() {
         "title": "Uni API"
       },
       {
-        "path": "/en-US/packages/base/env",
-        "component": require('D:/codes/uni-sdk/docs/packages/base/env/README.en-US.md').default,
+        "path": "/packages/base/can-iuse",
+        "component": require('D:/codes/uni-sdk/docs/packages/base/canIUse/README.md').default,
         "exact": true,
         "meta": {
-          "filePath": "docs/packages/base/env/README.en-US.md",
-          "updatedTime": 1633957682788,
-          "title": "env",
+          "filePath": "docs/packages/base/canIUse/README.md",
+          "updatedTime": 1634830503949,
           "slugs": [
             {
               "depth": 1,
-              "value": "env",
-              "heading": "env"
+              "value": "canIUse",
+              "heading": "caniuse"
             },
             {
               "depth": 2,
-              "value": "Support",
-              "heading": "support"
+              "value": "支持",
+              "heading": "支持"
             },
             {
               "depth": 2,
-              "value": "Install",
-              "heading": "install"
+              "value": "安装",
+              "heading": "安装"
             },
             {
               "depth": 2,
-              "value": "Usage",
-              "heading": "usage"
+              "value": "示例",
+              "heading": "示例"
             },
             {
               "depth": 2,
-              "value": "APIS",
-              "heading": "apis"
+              "value": "方法",
+              "heading": "方法"
             },
             {
               "depth": 3,
-              "value": "isWeex: boolean",
-              "heading": "isweex-boolean"
+              "value": "canIUse(options)",
+              "heading": "caniuseoptions"
             },
             {
-              "depth": 3,
-              "value": "isWeb: boolean",
-              "heading": "isweb-boolean"
+              "depth": 4,
+              "value": "参数",
+              "heading": "参数"
             },
             {
-              "depth": 3,
-              "value": "isMiniApp: boolean",
-              "heading": "isminiapp-boolean"
-            },
-            {
-              "depth": 3,
-              "value": "isWeChatMiniProgram: boolean",
-              "heading": "iswechatminiprogram-boolean"
-            },
-            {
-              "depth": 3,
-              "value": "isByteDanceMicroApp: boolean",
-              "heading": "isbytedancemicroapp-boolean"
-            },
-            {
-              "depth": 3,
-              "value": "isBaiduSmartProgram: boolean",
-              "heading": "isbaidusmartprogram-boolean"
-            },
-            {
-              "depth": 3,
-              "value": "isKuaiShouMiniProgram: boolean",
-              "heading": "iskuaishouminiprogram-boolean"
-            },
-            {
-              "depth": 3,
-              "value": "isNode: boolean",
-              "heading": "isnode-boolean"
-            },
-            {
-              "depth": 2,
-              "value": "Results in each container",
-              "heading": "results-in-each-container"
+              "depth": 4,
+              "value": "返回",
+              "heading": "返回"
             }
           ],
-          "locale": "en-US",
+          "title": "canIUse",
           "nav": {
-            "path": "/en-US/packages",
+            "path": "/packages",
             "title": "Packages"
           },
           "group": {
-            "path": "/en-US/packages/base",
-            "title": "Base"
+            "path": "/packages/base",
+            "title": "基础功能"
           }
         },
-        "title": "env"
+        "title": "canIUse"
       },
       {
         "path": "/packages/base/env",
@@ -272,9 +179,9 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "docs/packages/base/env/README.md",
-          "updatedTime": 1634660752568,
+          "updatedTime": 1634661490000,
           "group": {
-            "title": "环境探针 - 基础功能",
+            "title": "基础功能",
             "path": "/packages/base"
           },
           "title": "env",
@@ -353,29 +260,31 @@ export function getRoutes() {
         "title": "env"
       },
       {
-        "path": "/en-US/packages/quick-start",
-        "component": require('D:/codes/uni-sdk/docs/packages/quickStart/README.en-US.md').default,
+        "path": "/packages/navigate/back",
+        "component": require('D:/codes/uni-sdk/docs/packages/navigate/back/README.md').default,
         "exact": true,
         "meta": {
-          "filePath": "docs/packages/quickStart/README.en-US.md",
-          "updatedTime": 1633957682761,
+          "filePath": "docs/packages/navigate/back/README.md",
+          "updatedTime": 1634830420686,
           "group": {
-            "title": "Introduction",
-            "order": 0,
-            "__fallback": true,
-            "path": "/en-US/packages/quick-start"
+            "title": "路由",
+            "path": "/packages/navigate"
           },
-          "title": "QuickStart",
           "slugs": [
             {
               "depth": 1,
-              "value": "QuickStart",
-              "heading": "quickstart"
+              "value": "navigate.back",
+              "heading": "navigateback"
             },
             {
               "depth": 2,
-              "value": "Support",
-              "heading": "support"
+              "value": "支持",
+              "heading": "支持"
+            },
+            {
+              "depth": 2,
+              "value": "Install",
+              "heading": "install"
             },
             {
               "depth": 2,
@@ -383,23 +292,263 @@ export function getRoutes() {
               "heading": "usage"
             },
             {
-              "depth": 3,
-              "value": "Bigbag",
-              "heading": "bigbag"
-            },
-            {
-              "depth": 3,
-              "value": "Smallbag",
-              "heading": "smallbag"
+              "depth": 2,
+              "value": "参数",
+              "heading": "参数"
             }
           ],
-          "locale": "en-US",
+          "title": "navigate.back",
           "nav": {
-            "path": "/en-US/packages",
+            "path": "/packages",
             "title": "Packages"
           }
         },
-        "title": "QuickStart"
+        "title": "navigate.back"
+      },
+      {
+        "path": "/packages/navigate/go",
+        "component": require('D:/codes/uni-sdk/docs/packages/navigate/go/README.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "docs/packages/navigate/go/README.md",
+          "updatedTime": 1634830420689,
+          "group": {
+            "title": "路由",
+            "path": "/packages/navigate"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "navigate.go",
+              "heading": "navigatego"
+            },
+            {
+              "depth": 2,
+              "value": "支持",
+              "heading": "支持"
+            },
+            {
+              "depth": 2,
+              "value": "Install",
+              "heading": "install"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 2,
+              "value": "参数",
+              "heading": "参数"
+            }
+          ],
+          "title": "navigate.go",
+          "nav": {
+            "path": "/packages",
+            "title": "Packages"
+          }
+        },
+        "title": "navigate.go"
+      },
+      {
+        "path": "/packages/navigate/push",
+        "component": require('D:/codes/uni-sdk/docs/packages/navigate/push/README.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "docs/packages/navigate/push/README.md",
+          "updatedTime": 1634830420691,
+          "group": {
+            "title": "路由",
+            "path": "/packages/navigate"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "navigate.push",
+              "heading": "navigatepush"
+            },
+            {
+              "depth": 2,
+              "value": "支持",
+              "heading": "支持"
+            },
+            {
+              "depth": 2,
+              "value": "安装",
+              "heading": "安装"
+            },
+            {
+              "depth": 2,
+              "value": "使用",
+              "heading": "使用"
+            },
+            {
+              "depth": 2,
+              "value": "参数",
+              "heading": "参数"
+            },
+            {
+              "depth": 2,
+              "value": "web 中使用",
+              "heading": "web-中使用"
+            }
+          ],
+          "title": "navigate.push",
+          "nav": {
+            "path": "/packages",
+            "title": "Packages"
+          }
+        },
+        "title": "navigate.push"
+      },
+      {
+        "path": "/packages/navigate/re-launch",
+        "component": require('D:/codes/uni-sdk/docs/packages/navigate/reLaunch/README.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "docs/packages/navigate/reLaunch/README.md",
+          "updatedTime": 1634830420693,
+          "group": {
+            "title": "路由",
+            "path": "/packages/navigate"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "navigate.reLaunch",
+              "heading": "navigaterelaunch"
+            },
+            {
+              "depth": 2,
+              "value": "支持",
+              "heading": "支持"
+            },
+            {
+              "depth": 2,
+              "value": "Install",
+              "heading": "install"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 2,
+              "value": "参数",
+              "heading": "参数"
+            },
+            {
+              "depth": 2,
+              "value": "web 中使用",
+              "heading": "web-中使用"
+            }
+          ],
+          "title": "navigate.reLaunch",
+          "nav": {
+            "path": "/packages",
+            "title": "Packages"
+          }
+        },
+        "title": "navigate.reLaunch"
+      },
+      {
+        "path": "/packages/navigate/replace",
+        "component": require('D:/codes/uni-sdk/docs/packages/navigate/replace/README.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "docs/packages/navigate/replace/README.md",
+          "updatedTime": 1634830420694,
+          "group": {
+            "title": "路由",
+            "path": "/packages/navigate"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "navigate.replace",
+              "heading": "navigatereplace"
+            },
+            {
+              "depth": 2,
+              "value": "支持",
+              "heading": "支持"
+            },
+            {
+              "depth": 2,
+              "value": "Install",
+              "heading": "install"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 2,
+              "value": "参数",
+              "heading": "参数"
+            },
+            {
+              "depth": 2,
+              "value": "web 中使用",
+              "heading": "web-中使用"
+            }
+          ],
+          "title": "navigate.replace",
+          "nav": {
+            "path": "/packages",
+            "title": "Packages"
+          }
+        },
+        "title": "navigate.replace"
+      },
+      {
+        "path": "/packages/navigate/switch-tab",
+        "component": require('D:/codes/uni-sdk/docs/packages/navigate/switchTab/README.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "docs/packages/navigate/switchTab/README.md",
+          "updatedTime": 1634830420696,
+          "group": {
+            "title": "路由",
+            "path": "/packages/navigate"
+          },
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "navigate.switchTab",
+              "heading": "navigateswitchtab"
+            },
+            {
+              "depth": 2,
+              "value": "支持",
+              "heading": "支持"
+            },
+            {
+              "depth": 2,
+              "value": "安装",
+              "heading": "安装"
+            },
+            {
+              "depth": 2,
+              "value": "示例",
+              "heading": "示例"
+            },
+            {
+              "depth": 2,
+              "value": "参数",
+              "heading": "参数"
+            }
+          ],
+          "title": "navigate.switchTab",
+          "nav": {
+            "path": "/packages",
+            "title": "Packages"
+          }
+        },
+        "title": "navigate.switchTab"
       },
       {
         "path": "/packages/quick-start",
@@ -407,7 +556,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "docs/packages/quickStart/README.md",
-          "updatedTime": 1633957682762,
+          "updatedTime": 1634661490000,
           "group": {
             "title": "介绍",
             "order": 0,
@@ -450,70 +599,12 @@ export function getRoutes() {
         "title": "快速开始"
       },
       {
-        "path": "/en-US/packages/quick-start/plugin",
-        "component": require('D:/codes/uni-sdk/docs/packages/quickStart/plugin/README.en-US.md').default,
-        "exact": true,
-        "meta": {
-          "filePath": "docs/packages/quickStart/plugin/README.en-US.md",
-          "updatedTime": 1633957682762,
-          "group": {
-            "title": "Introduction",
-            "order": 0,
-            "path": "/en-US/packages/quick-start"
-          },
-          "title": "Introduce by environment",
-          "slugs": [
-            {
-              "depth": 1,
-              "value": "Introduce by environment",
-              "heading": "introduce-by-environment"
-            },
-            {
-              "depth": 2,
-              "value": "Support",
-              "heading": "support"
-            },
-            {
-              "depth": 2,
-              "value": "Install",
-              "heading": "install"
-            },
-            {
-              "depth": 2,
-              "value": "Usage",
-              "heading": "usage"
-            },
-            {
-              "depth": 3,
-              "value": "Rax",
-              "heading": "rax"
-            },
-            {
-              "depth": 4,
-              "value": "Install",
-              "heading": "install-1"
-            },
-            {
-              "depth": 4,
-              "value": "Usage",
-              "heading": "usage-1"
-            }
-          ],
-          "locale": "en-US",
-          "nav": {
-            "path": "/en-US/packages",
-            "title": "Packages"
-          }
-        },
-        "title": "Introduce by environment"
-      },
-      {
         "path": "/packages/quick-start/plugin",
         "component": require('D:/codes/uni-sdk/docs/packages/quickStart/plugin/README.md').default,
         "exact": true,
         "meta": {
           "filePath": "docs/packages/quickStart/plugin/README.md",
-          "updatedTime": 1633957682762,
+          "updatedTime": 1634661490000,
           "group": {
             "title": "介绍",
             "order": 0,
@@ -565,28 +656,22 @@ export function getRoutes() {
         "title": "分端构建"
       },
       {
-        "path": "/en-US/packages/base",
-        "meta": {},
-        "exact": true,
-        "redirect": "/en-US/packages/base/env"
-      },
-      {
-        "path": "/en-US/packages",
-        "meta": {},
-        "exact": true,
-        "redirect": "/en-US/packages/quick-start"
-      },
-      {
         "path": "/packages/base",
         "meta": {},
         "exact": true,
-        "redirect": "/packages/base/env"
+        "redirect": "/packages/base/can-iuse"
       },
       {
         "path": "/packages",
         "meta": {},
         "exact": true,
         "redirect": "/packages/quick-start"
+      },
+      {
+        "path": "/packages/navigate",
+        "meta": {},
+        "exact": true,
+        "redirect": "/packages/navigate/back"
       }
     ],
     "title": "Uni SDK",

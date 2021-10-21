@@ -1,17 +1,17 @@
 export default class Events {
-  private events: any;
+  private events: any
   constructor() {
-    this.events = {};
+    this.events = {}
   }
   emit(key: string, params: any) {
     if (this.events[key] && this.events[key].size > 0) {
-      const _queue = new Set(Array.from(this.events[key]));
+      const _queue = new Set(Array.from(this.events[key]))
       _queue.forEach(async (item: any) => {
-        item.handler(params);
+        item.handler(params)
         if (item.once) {
-          this.events[key].delete(item);
+          this.events[key].delete(item)
         }
-      });
+      })
     }
   }
 
@@ -30,9 +30,9 @@ export default class Events {
   once(key: string, cb: (val: any) => void) {
     const item = {
       once: true,
-      handler: cb,
-    };
-    this.events[key] ? this.events[key].add(item) : (this.events[key] = new Set([item]));
+      handler: cb
+    }
+    this.events[key] ? this.events[key].add(item) : (this.events[key] = new Set([item]))
     // return () => {
     //   this.events[key].delete(item);
     // };
@@ -41,11 +41,11 @@ export default class Events {
   register(key: string, cb: (val: any) => void) {
     const item = {
       once: false,
-      handler: cb,
-    };
-    this.events[key] ? this.events[key].add(item) : (this.events[key] = new Set([item]));
+      handler: cb
+    }
+    this.events[key] ? this.events[key].add(item) : (this.events[key] = new Set([item]))
     return () => {
-      this.events[key].delete(item);
-    };
+      this.events[key].delete(item)
+    }
   }
 }

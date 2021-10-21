@@ -9,6 +9,7 @@
 /node_modules
 
 # profiling files
+src/.umi
 
 # IDEs and editors
 /.idea

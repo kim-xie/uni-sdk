@@ -1,56 +1,5 @@
 {
   "menus": {
-    "en-US": {
-      "*": [
-        {
-          "path": "/en-US",
-          "title": "Uni API",
-          "meta": {}
-        }
-      ],
-      "/en-US/packages": [
-        {
-          "title": "Introduction",
-          "path": "/en-US/packages/quick-start",
-          "meta": {
-            "order": 0
-          },
-          "children": [
-            {
-              "path": "/en-US/packages/quick-start/plugin",
-              "title": "Introduce by environment",
-              "meta": {}
-            }
-          ]
-        },
-        {
-          "title": "Introduction",
-          "meta": {
-            "order": 0,
-            "__fallback": true
-          },
-          "children": [
-            {
-              "path": "/en-US/packages/quick-start",
-              "title": "QuickStart",
-              "meta": {}
-            }
-          ]
-        },
-        {
-          "title": "Base",
-          "path": "/en-US/packages/base",
-          "meta": {},
-          "children": [
-            {
-              "path": "/en-US/packages/base/env",
-              "title": "env",
-              "meta": {}
-            }
-          ]
-        }
-      ]
-    },
     "zh-CN": {
       "*": [
         {
@@ -89,13 +38,55 @@
           ]
         },
         {
-          "title": "环境探针 - 基础功能",
+          "title": "基础功能",
           "path": "/packages/base",
           "meta": {},
           "children": [
             {
+              "path": "/packages/base/can-iuse",
+              "title": "canIUse",
+              "meta": {}
+            },
+            {
               "path": "/packages/base/env",
               "title": "env",
+              "meta": {}
+            }
+          ]
+        },
+        {
+          "title": "路由",
+          "path": "/packages/navigate",
+          "meta": {},
+          "children": [
+            {
+              "path": "/packages/navigate/back",
+              "title": "navigate.back",
+              "meta": {}
+            },
+            {
+              "path": "/packages/navigate/go",
+              "title": "navigate.go",
+              "meta": {}
+            },
+            {
+              "path": "/packages/navigate/push",
+              "title": "navigate.push",
+              "meta": {}
+            },
+            {
+              "path": "/packages/navigate/re-launch",
+              "title": "navigate.reLaunch",
+              "meta": {}
+            },
+            {
+              "path": "/packages/navigate/replace",
+              "title": "navigate.replace",
+              "meta": {}
+            },
+            {
+              "path": "/packages/navigate/switch-tab",
+              "title": "navigate.switchTab",
               "meta": {}
             }
           ]
@@ -107,23 +98,9 @@
     {
       "name": "zh-CN",
       "label": "中文"
-    },
-    {
-      "name": "en-US",
-      "label": "English"
     }
   ],
   "navs": {
-    "en-US": [
-      {
-        "title": "API",
-        "path": "/en-US/packages"
-      },
-      {
-        "title": "GitHub",
-        "path": "https://github.com/raxjs/universal-api"
-      }
-    ],
     "zh-CN": [
       {
         "title": "API",
@@ -131,7 +108,7 @@
       },
       {
         "title": "GitHub",
-        "path": "https://github.com/raxjs/universal-api"
+        "path": "https://github.com/mr-kings/uni-sdk"
       }
     ]
   },

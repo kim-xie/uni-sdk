@@ -1,32 +1,34 @@
-const path = require('path');
-const rm = require('rimraf');
-const sourceMap = require('../../api-config');
-const chalk = require('chalk');
-const fs = require('fs-extra');
-const root = process.cwd();
-const docsOutputDir = 'docs/';
+const path = require('path')
+const rm = require('rimraf')
+const sourceMap = require('../../sdk-config')
+const chalk = require('chalk')
+const fs = require('fs-extra')
+const root = process.cwd()
+const docsOutputDir = 'docs/'
 
-function logger( text = '', opts = { status: 'INFO' } ) {
-  let logText = '';
-  switch ( opts.status) {
+function logger(text = '', opts = { status: 'INFO' }) {
+  let logText = ''
+  switch (opts.status) {
     case 'SUCCESS':
-      logText = `${chalk.bgGreen('[SUCCESS]')} ${chalk.green(text)}`;
-      break;
+      logText = `${chalk.bgGreen('[SUCCESS]')} ${chalk.green(text)}`
+      break
     case 'WARN':
-      logText = `${chalk.bgYellow('[WARN]')} ${chalk.yellow(text)}`;
-      break;
+      logText = `${chalk.bgYellow('[WARN]')} ${chalk.yellow(text)}`
+      break
     case 'ERROR':
-      logText = `${chalk.bgRed('[ERROR]')} ${chalk.red(text)}`;
-      break;
+      logText = `${chalk.bgRed('[ERROR]')} ${chalk.red(text)}`
+      break
     default:
-      logText = `${chalk.bgBlue('[INFO]')} ${chalk.white(text)}`;
-      break;
+      logText = `${chalk.bgBlue('[INFO]')} ${chalk.white(text)}`
+      break
   }
-  console.log(logText);
+  console.log(logText)
 }
 
 // 注入文件的内容
-const injectScript = '\n\n```jsx | inline' + `
+const injectScript =
+  '\n\n```jsx | inline' +
+  `
   import React from 'react';
   export default class Home extends React.Component {
     componentDidMount() {
@@ -45,68 +47,74 @@ const injectScript = '\n\n```jsx | inline' + `
       return null;
     }
   }
-` + '```\n';
+` +
+  '```\n'
 
 // 注入文件脚本
-const injectFile = (dir, done = () => {}) => {
-  let results = [];
+const injectFile = (dir, done = () => ({})) => {
+  let results = []
   fs.readdir(dir, (err, list) => {
-    if (err) return done(err);
-    let i = 0;
-    (function next() {
-      let file = list[i++];
-      if (!file) return done(null, results);
-      file = path.resolve(dir, file);
+    if (err) return done(err)
+    let i = 0
+    ;(function next() {
+      let file = list[i++]
+      if (!file) return done(null, results)
+      file = path.resolve(dir, file)
       fs.stat(file, (err, stat) => {
         if (stat && stat.isDirectory()) {
           injectFile(file, (err, res) => {
-            results = results.concat(res);
-            next();
-          });
+            results = results.concat(res)
+            next()
+          })
         } else {
-          fs.appendFileSync(file, injectScript);
-          results.push(file);
-          next();
+          fs.appendFileSync(file, injectScript)
+          results.push(file)
+          next()
         }
-      });
-    })();
-  });
-};
+      })
+    })()
+  })
+}
 
 const buildDocs = async () => {
-  const docsPath = path.resolve(root, docsOutputDir);
-  const packageDocsPath = path.resolve(root, docsOutputDir, 'packages');
-  const homePath = path.resolve(root, 'scripts/docs/docsSource/home');
-  const quickStartPath = path.resolve(root, 'scripts/docs/docsSource/quickStart');
+  logger('BUILDDOCS START', { status: 'INFO' })
+  const docsPath = path.resolve(root, docsOutputDir)
+  const packageDocsPath = path.resolve(root, docsOutputDir, 'packages')
+  const homePath = path.resolve(root, 'scripts/docs/docsSource/home')
+  const quickStartPath = path.resolve(root, 'scripts/docs/docsSource/quickStart')
   if (!fs.pathExistsSync(docsPath)) {
-    fs.mkdirSync(docsPath);
-    fs.mkdirSync(path.resolve(docsPath, 'packages'));
+    fs.mkdirSync(docsPath)
+    fs.mkdirSync(path.resolve(docsPath, 'packages'))
   } else {
-    rm.sync(docsPath);
-    fs.mkdirSync(docsPath);
-    fs.mkdirSync(path.resolve(docsPath, 'packages'));
+    rm.sync(docsPath)
+    fs.mkdirSync(docsPath)
+    fs.mkdirSync(path.resolve(docsPath, 'packages'))
   }
-  fs.copySync(homePath, docsPath);
-  fs.copySync(quickStartPath, path.resolve(packageDocsPath, 'quickStart'));
+  fs.copySync(homePath, docsPath)
+  fs.copySync(quickStartPath, path.resolve(packageDocsPath, 'quickStart'))
 
   for (const key in sourceMap) {
     if (Object.hasOwnProperty.call(sourceMap, key)) {
-      const value = sourceMap[key];
-      const fromPath = path.resolve(root, value.path.replace(/src\/index\.(t|j)s/, 'docs'));
-      const toPath = path.resolve(root, docsOutputDir, value.path.replace(/src\/packages/, 'packages').replace(/src\/index\.(t|j)s/, ''));
+      logger(`BUILDDOCS MODULE ${key}`, { status: 'INFO' })
+      const value = sourceMap[key]
+      const fromPath = path.resolve(root, value.path.replace(/src\/index\.(t|j)s/, 'docs'))
+      const toPath = path.resolve(
+        root,
+        docsOutputDir,
+        value.path.replace(/src\/packages/, 'packages').replace(/src\/index\.(t|j)s/, '')
+      )
       if (fs.pathExistsSync(fromPath)) {
-        fs.copySync(fromPath, toPath);
+        fs.copySync(fromPath, toPath)
         await new Promise(resolve => {
-          injectFile(toPath, resolve);
-        });
+          injectFile(toPath, resolve)
+        })
       }
     }
   }
-
-  logger('END', {status: 'SUCCESS'});
-};
+  logger('BUILDDOCS END', { status: 'SUCCESS' })
+}
 
 module.exports = {
   initDocs: buildDocs,
   injectFile: injectFile
-};
+}
